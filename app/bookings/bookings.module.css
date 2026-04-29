@@ -25,6 +25,11 @@
   align-items: start;
 }
 
+/* CRITICAL FIX: Prevents child elements (like scrolling lists) from blowing out the grid width */
+.pageWrap > div {
+  min-width: 0;
+}
+
 .stepper {
   display: flex; align-items: center; gap: 0;
   margin-bottom: 36px;
@@ -164,7 +169,14 @@
   letter-spacing: 0.5px;
 }
 
-.dateSlots { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 20px; }
+/* Made scrollable areas smooth and hid native scrollbars */
+.dateSlots { 
+  display: flex; gap: 10px; overflow-x: auto; 
+  padding-bottom: 8px; margin-bottom: 20px; 
+  width: 100%; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.dateSlots::-webkit-scrollbar { display: none; }
 .dateSlot {
   background: var(--slate); border: 2px solid var(--border);
   border-radius: 10px; padding: 10px 16px;
@@ -411,31 +423,61 @@
 
 @media(max-width: 980px) {
   .pageWrap { 
-    grid-template-columns: 1fr; /* Switch to single column flow */
+    /* Switch from Grid to Flex to strictly enforce screen constraints */
+    display: flex;
+    flex-direction: column;
+    padding: 24px 5% 60px;
+  }
+  .pageWrap > div {
+    width: 100%;
+    max-width: 100%; /* Force strict boundaries */
   }
   .summaryCard { 
     position: static; 
-    order: -1; /* Puts the summary card at the top on mobile/tablet */
-    margin-bottom: 20px;
+    order: -1; 
+    margin-bottom: 24px;
   }
 }
 
 @media(max-width: 768px) {
   .serviceGrid { grid-template-columns: repeat(2, 1fr); }
   .formGrid { grid-template-columns: 1fr; }
-  .stepper { flex-wrap: wrap; gap: 10px; }
-  .stepLine { display: none; /* Hide lines on small screens if they crowd out */ }
-  .stepItem { justify-content: center; }
+  
+  /* Convert stepper to a swipable row instead of wrapping onto two broken lines */
+  .stepper { 
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    padding-bottom: 12px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .stepper::-webkit-scrollbar { display: none; }
+  .stepItem { flex: 0 0 auto; }
+  .stepLine { display: block; flex: 0 0 30px; }
 }
 
 @media(max-width: 500px) {
-  .serviceGrid { grid-template-columns: 1fr; /* Stack services entirely on small phones */ }
+  .serviceGrid { grid-template-columns: 1fr; }
   .timeGrid { grid-template-columns: repeat(3, 1fr); }
-  .otpBox { width: 44px; height: 52px; font-size: 1.2rem; }
-  .flowCard { padding: 20px; }
+  
+  /* Optimize padding for small screens */
+  .flowCard { padding: 24px 16px; }
+  
+  .otpInputs { gap: 8px; }
+  .otpBox { width: 40px; height: 52px; font-size: 1.2rem; }
+  
   .sizeDisplay { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .addonItem { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .addonCheck { align-self: flex-end; }
+  
+  /* FIX: Restore horizontal layout for add-ons, scale font down slightly to prevent squeeze */
+  .addonItem { flex-direction: row; align-items: center; padding: 12px; gap: 8px; }
+  .addonLeft { gap: 10px; }
+  .addonName { font-size: 0.8rem; }
+  .addonDesc { font-size: 0.7rem; line-height: 1.3; }
+  .addonPrice { font-size: 0.8rem; }
+  .addonCheck { align-self: center; }
+  
+  .successTitle { font-size: 1.6rem; }
 }
 
 .secLabel {

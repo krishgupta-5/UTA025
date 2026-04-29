@@ -237,7 +237,7 @@ export default function Bookings() {
     
     setState(prev => ({ ...prev, phone }))
     
-    const btn = document.getElementById('otp-btn-text') as HTMLButtonElement | null
+    const btn = document.getElementById('otp-btn-text') as HTMLElement | null
     const spinner = document.getElementById('otp-spinner')
     if (btn) btn.textContent = 'Sending…'
     if (spinner) spinner.style.display = 'block'
@@ -291,7 +291,7 @@ export default function Bookings() {
     }
     el.classList.toggle('filled', el.value.length > 0)
     
-    const full = ([1,2,3,4,5,6] as number[]).map((i: number) => {
+    const full = ([1,2,3,4,5,6] as const).map((i: number) => {
       const input = document.getElementById('o'+i) as HTMLInputElement
       return input?.value || ''
     }).join('')
@@ -308,7 +308,7 @@ export default function Bookings() {
   }
 
   const resendOTP = () => {
-    ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
+    ([1,2,3,4,5,6] as const).forEach((i: number) => { 
       const input = document.getElementById('o'+i) as HTMLInputElement
       if (input) {
         input.value = ''
@@ -327,12 +327,12 @@ export default function Bookings() {
   }
 
   const verifyOTP = () => {
-    const entered = ([1,2,3,4,5,6] as number[]).map((i: number) => {
+    const entered = ([1,2,3,4,5,6] as const).map((i: number) => {
       const input = document.getElementById('o'+i) as HTMLInputElement
       return input?.value || ''
     }).join('')
     
-    const verifyButton: HTMLButtonElement | null = document.getElementById('verify-btn') as HTMLButtonElement | null
+    const verifyButton = document.getElementById('verify-btn') as HTMLButtonElement | null
     const spinner: HTMLElement | null = document.getElementById('verify-spinner')
     const btnLabel: HTMLElement | null = document.getElementById('verify-btn-text')
     
@@ -358,10 +358,9 @@ export default function Bookings() {
       } else {
         if (spinner) spinner.style.display = 'none'
         if (btnLabel) btnLabel.textContent = 'Verify & Continue →'
-        // @ts-ignore
-        verifyButton!.disabled = false
+        if (verifyButton) verifyButton.disabled = false;
         
-        ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
+        ([1,2,3,4,5,6] as const).forEach((i: number) => { 
           const input = document.getElementById('o'+i) as HTMLInputElement
           if (input) {
             input.value = ''
@@ -370,7 +369,7 @@ export default function Bookings() {
           }
         })
         setTimeout(() => {
-          ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
+          ([1,2,3,4,5,6] as const).forEach((i: number) => { 
             const input = document.getElementById('o'+i) as HTMLInputElement
             if (input) input.classList.remove('error')
           })

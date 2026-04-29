@@ -21,18 +21,15 @@
 
 html { scroll-behavior: smooth; }
 
+/* FIX 1: Globally remove default anchor underlines to fix the blue line on Link buttons */
+a { text-decoration: none; color: inherit; outline: none; }
+
 /* Bookings page global styles */
 body {
   font-family: 'Inter', sans-serif;
   background: var(--midnight);
   color: var(--white);
   min-height: 100vh;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--midnight);
-  color: var(--white);
   overflow-x: hidden;
 }
 
@@ -596,13 +593,21 @@ footer {
 /* Mobile Portrait (600px and below) */
 @media(max-width: 600px) {
   section { padding: 60px 5%; }
-  #hero { padding: 100px 5% 50px; gap: 40px; }
+  
+  /* FIX 3: Increased bottom padding for the hero section so stats don't cut off */
+  #hero { padding: 100px 5% 70px; gap: 40px; } 
   .services-grid, .steps-grid, .footer-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .hero-stats { gap: 15px; }
+  
+  /* FIX 3: Added row-gap to stats so they gracefully wrap without squishing vertically */
+  .hero-stats { gap: 20px 15px; flex-wrap: wrap; justify-content: center; } 
+  
   .trust-badges { flex-direction: column; }
   .compare-table th, .compare-table td { padding: 10px; font-size: 0.8rem; }
   .worker-form-card { padding: 24px; }
+  
+  /* FIX 2: Vertically stack the title and button in the "What We Offer" section so it doesn't squish */
+  .services-header { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
 
 /* ── ENHANCED SLIDER STYLING ── */

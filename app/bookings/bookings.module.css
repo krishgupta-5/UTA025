@@ -153,7 +153,7 @@
   background: var(--saffron);
 }
 .sizeVal { 
-  font-family:'Clash Display',sans-serif; 
+  font-family:'Poppins',sans-serif; 
   font-size:1.4rem; font-weight:700; 
   color:var(--saffron); 
   text-shadow: 0 0 20px rgba(255,107,26,0.3);
@@ -174,7 +174,7 @@
 .dateSlot:hover { border-color: rgba(255,107,26,0.4); }
 .dateSlot.selected { border-color: var(--saffron); background: var(--saffron-dim); }
 .dateSlot .dsDay { font-size: 0.7rem; color: var(--muted); }
-.dateSlot .dsDate { font-family:'Clash Display',sans-serif; font-size:1.1rem; font-weight:700; }
+.dateSlot .dsDate { font-family:'Poppins',sans-serif; font-size:1.1rem; font-weight:700; }
 .dateSlot .dsMonth { font-size: 0.7rem; color: var(--muted); }
 
 .timeGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }

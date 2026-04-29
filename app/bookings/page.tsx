@@ -358,7 +358,7 @@ export default function Bookings() {
       } else {
         if (spinner) spinner.style.display = 'none'
         if (btnLabel) btnLabel.textContent = 'Verify & Continue →'
-        if (btn) btn.disabled = false
+        if (btn) (btn as HTMLButtonElement).disabled = false
         
         [1,2,3,4,5,6].forEach((i: number) => { 
           const input = document.getElementById('o'+i) as HTMLInputElement

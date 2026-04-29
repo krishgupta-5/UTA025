@@ -23,14 +23,14 @@ html { scroll-behavior: smooth; }
 
 /* Bookings page global styles */
 body {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--midnight);
   color: var(--white);
   min-height: 100vh;
 }
 
 body {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--midnight);
   color: var(--white);
   overflow-x: hidden;
@@ -46,7 +46,7 @@ nav {
   border-bottom: 1px solid rgba(255,107,26,0.15);
 }
 .logo {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem; font-weight: 700;
   color: var(--white);
   letter-spacing: -0.5px;
@@ -56,7 +56,7 @@ nav {
 .nav-text-btn {
   background: none; border: none;
   color: rgba(255,255,255,0.65);
-  font-family: 'Satoshi', sans-serif; font-size: 0.9rem; font-weight: 500;
+  font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500;
   cursor: pointer; transition: color 0.2s;
 }
 .nav-text-btn:hover { color: var(--saffron); }
@@ -75,7 +75,7 @@ nav {
   background: var(--saffron);
   color: white; border: none;
   padding: 10px 22px; border-radius: 8px;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem; font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
@@ -110,7 +110,7 @@ nav {
 .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 h1 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 700;
   line-height: 1.1;
@@ -127,7 +127,7 @@ h1 em { color: var(--saffron); font-style: normal; }
   background: var(--saffron);
   color: white; border: none;
   padding: 14px 28px; border-radius: 10px;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem; font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
@@ -139,7 +139,7 @@ h1 em { color: var(--saffron); font-style: normal; }
   color: white;
   border: 1.5px solid rgba(255,255,255,0.25);
   padding: 14px 28px; border-radius: 10px;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem; font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
@@ -152,7 +152,7 @@ h1 em { color: var(--saffron); font-style: normal; }
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 .stat-item .number {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem; font-weight: 700;
   color: var(--saffron);
 }
@@ -170,7 +170,7 @@ h1 em { color: var(--saffron); font-style: normal; }
   border-radius: 16px; padding: 24px;
 }
 .booking-card h3 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem; margin-bottom: 18px;
   color: var(--white);
 }
@@ -182,7 +182,7 @@ h1 em { color: var(--saffron); font-style: normal; }
   border: 1px solid rgba(255,255,255,0.1);
   color: white; border-radius: 8px;
   padding: 10px 14px; font-size: 0.9rem;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -196,13 +196,13 @@ h1 em { color: var(--saffron); font-style: normal; }
 }
 .price-preview .price-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
 .price-preview .price-amount {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.4rem; font-weight: 700; color: var(--green);
 }
 .book-btn {
   width: 100%; background: var(--saffron); color: white; border: none;
   padding: 13px; border-radius: 10px; font-size: 1rem; font-weight: 700;
-  cursor: pointer; transition: all 0.2s; font-family: 'Satoshi', sans-serif;
+  cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
 }
 .book-btn:hover { background: var(--saffron-light); transform: translateY(-1px); }
 
@@ -227,7 +227,7 @@ section { padding: 90px 6%; }
   letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
 }
 .section-title {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700; letter-spacing: -1px;
   line-height: 1.15; margin-bottom: 16px;
@@ -254,14 +254,14 @@ section { padding: 90px 6%; }
 .step-card:hover { transform: translateY(-4px); border-color: rgba(255,107,26,0.3); }
 .step-number {
   position: absolute; top: 16px; right: 18px;
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 3.5rem; font-weight: 700;
   color: rgba(255,107,26,0.08);
   line-height: 1;
 }
 .step-icon { font-size: 2rem; margin-bottom: 14px; }
 .step-card h4 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem; font-weight: 600; margin-bottom: 8px;
 }
 .step-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
@@ -292,7 +292,7 @@ section { padding: 90px 6%; }
 .service-card:hover::after { transform: scaleX(1); }
 .service-emoji { font-size: 2.2rem; margin-bottom: 14px; }
 .service-card h4 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.05rem; font-weight: 600; margin-bottom: 8px;
 }
 .service-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 16px; }
@@ -338,11 +338,11 @@ section { padding: 90px 6%; }
   text-transform: uppercase; margin-bottom: 8px;
 }
 .pricing-size {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;
 }
 .pricing-amount {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.6rem; font-weight: 700;
   color: var(--saffron); line-height: 1;
   margin-bottom: 4px;
@@ -358,7 +358,7 @@ section { padding: 90px 6%; }
   width: 100%; padding: 12px;
   border-radius: 10px; font-size: 0.95rem; font-weight: 700;
   cursor: pointer; transition: all 0.2s;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   border: none;
 }
 .pricing-card:not(.featured) .pricing-btn {
@@ -381,7 +381,7 @@ section { padding: 90px 6%; }
 .compare-table { width: 100%; border-collapse: collapse; }
 .compare-table th {
   padding: 12px 16px; text-align: left;
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem; font-weight: 600;
 }
 .compare-table th:nth-child(2) { color: var(--saffron); }
@@ -447,7 +447,7 @@ section { padding: 90px 6%; }
   border-radius: 18px; padding: 32px;
 }
 .worker-form-card h3 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.3rem; margin-bottom: 20px;
 }
 .wf-group { margin-bottom: 14px; }
@@ -457,7 +457,7 @@ section { padding: 90px 6%; }
   border: 1px solid rgba(255,255,255,0.1);
   color: white; border-radius: 8px;
   padding: 11px 14px; font-size: 0.9rem;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -475,7 +475,7 @@ footer {
   gap: 40px; margin-bottom: 40px;
 }
 .footer-logo {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;
 }
 .footer-logo span { color: var(--saffron); }
@@ -525,7 +525,7 @@ footer {
 }
 .modal-overlay.active .modal { transform: translateY(0); }
 .modal-title {
-  font-family: 'Clash Display', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.4rem; font-weight: 700; margin-bottom: 6px;
 }
 .modal-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
@@ -716,7 +716,7 @@ input[type=range]:focus {
 }
 
 .size-val { 
-  font-family:'Clash Display',sans-serif; 
+  font-family:'Poppins',sans-serif; 
   font-size:1.4rem; font-weight:700; 
   color:var(--saffron); 
   text-shadow: 0 0 20px rgba(255,107,26,0.3);

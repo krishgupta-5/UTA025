@@ -1,4 +1,6 @@
 declare const styles: {
+  readonly "nav": string;
+  readonly "logo": string;
   readonly "navBack": string;
   readonly "pageWrap": string;
   readonly "stepper": string;

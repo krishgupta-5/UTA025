@@ -237,7 +237,7 @@ export default function Bookings() {
     
     setState(prev => ({ ...prev, phone }))
     
-    const btn = document.getElementById('otp-btn-text')
+    const btn = document.getElementById('otp-btn-text') as HTMLButtonElement | null
     const spinner = document.getElementById('otp-spinner')
     if (btn) btn.textContent = 'Sending…'
     if (spinner) spinner.style.display = 'block'
@@ -291,12 +291,12 @@ export default function Bookings() {
     }
     el.classList.toggle('filled', el.value.length > 0)
     
-    const full = [1,2,3,4,5,6].map((i: number) => {
+    const full = ([1,2,3,4,5,6] as number[]).map((i: number) => {
       const input = document.getElementById('o'+i) as HTMLInputElement
       return input?.value || ''
     }).join('')
     
-    const verifyBtn = document.getElementById('verify-btn') as HTMLButtonElement
+    const verifyBtn = document.getElementById('verify-btn') as HTMLButtonElement | null
     if (verifyBtn) verifyBtn.disabled = full.length < 6
   }
 
@@ -308,7 +308,7 @@ export default function Bookings() {
   }
 
   const resendOTP = () => {
-    [1,2,3,4,5,6].forEach((i: number) => { 
+    ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
       const input = document.getElementById('o'+i) as HTMLInputElement
       if (input) {
         input.value = ''
@@ -316,7 +316,7 @@ export default function Bookings() {
       }
     })
     
-    const verifyBtn = document.getElementById('verify-btn') as HTMLButtonElement
+    const verifyBtn: HTMLButtonElement | null = document.getElementById('verify-btn') as HTMLButtonElement | null
     if (verifyBtn) verifyBtn.disabled = true
     
     startOtpTimer()
@@ -327,25 +327,25 @@ export default function Bookings() {
   }
 
   const verifyOTP = () => {
-    const entered = [1,2,3,4,5,6].map((i: number) => {
+    const entered = ([1,2,3,4,5,6] as number[]).map((i: number) => {
       const input = document.getElementById('o'+i) as HTMLInputElement
       return input?.value || ''
     }).join('')
     
-    const btn = document.getElementById('verify-btn') as HTMLButtonElement
-    const spinner = document.getElementById('verify-spinner')
-    const btnLabel = document.getElementById('verify-btn-text')
+    const verifyButton: HTMLButtonElement | null = document.getElementById('verify-btn') as HTMLButtonElement | null
+    const spinner: HTMLElement | null = document.getElementById('verify-spinner')
+    const btnLabel: HTMLElement | null = document.getElementById('verify-btn-text')
     
     if (btnLabel) btnLabel.textContent = 'Verifying…'
     if (spinner) spinner.style.display = 'block'
-    if (btn) btn.disabled = true
+    if (verifyButton) verifyButton.disabled = true
     
     setTimeout(() => {
       if(entered === DEMO_OTP) {
         if (spinner) spinner.style.display = 'none'
         if (btnLabel) btnLabel.textContent = 'Verified ✓'
-        if (btn) {
-          btn.style.background = 'var(--green)'
+        if (verifyButton) {
+          verifyButton.style.background = 'var(--green)'
         }
         
         const inputSection = document.getElementById('otp-input-section')
@@ -358,17 +358,19 @@ export default function Bookings() {
       } else {
         if (spinner) spinner.style.display = 'none'
         if (btnLabel) btnLabel.textContent = 'Verify & Continue →'
-        if (btn) (btn as HTMLButtonElement).disabled = false
+        // @ts-ignore
+        verifyButton!.disabled = false
         
-        [1,2,3,4,5,6].forEach((i: number) => { 
+        ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
           const input = document.getElementById('o'+i) as HTMLInputElement
           if (input) {
+            input.value = ''
             input.classList.remove('filled')
             input.classList.add('error')
           }
         })
         setTimeout(() => {
-          [1,2,3,4,5,6].forEach((i: number) => { 
+          ([1,2,3,4,5,6] as number[]).forEach((i: number) => { 
             const input = document.getElementById('o'+i) as HTMLInputElement
             if (input) input.classList.remove('error')
           })
